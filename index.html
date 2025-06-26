@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Text Page 1</title>
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+  <!-- Pixel and mono fonts for title and body, plus italic font for gratitude note -->
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@700&family=Press+Start+2P&family=Roboto:ital,wght@1,900&display=swap" rel="stylesheet">
   <style>
     html, body {
       height: 100%;
@@ -17,7 +18,6 @@
       min-height: 100vh;
       width: 100vw;
       position: relative;
-      /* Removed overflow: hidden, display: flex, align-items, justify-content */
       box-sizing: border-box;
     }
     .matrix-lights {
@@ -25,7 +25,7 @@
       top: 0; left: 0; width: 100vw; height: 100vh;
       pointer-events: none;
       z-index: 0;
-      opacity: 0.22;
+      opacity: 0.65;
     }
     .container {
       position: relative;
@@ -42,25 +42,28 @@
       margin: 4em auto 2em auto;
     }
     h1 {
-      font-family: 'Orbitron', 'Share Tech Mono', monospace;
-      letter-spacing: 0.1em;
+      font-family: 'Press Start 2P', 'Orbitron', 'Share Tech Mono', monospace;
+      letter-spacing: 0.06em;
       font-size: 2.2em;
-      margin-bottom: 0.2em;
+      margin-bottom: 0.6em;
       color: #C2185B;
-      text-shadow: 0 0 8px #BBDEFB, 0 0 2px #1976D2;
+      text-shadow: 0 0 12px #BBDEFB, 0 0 2px #1976D2;
+      text-align: center;
+      line-height: 1.3;
     }
     p {
       font-size: 1.16em;
       line-height: 1.6;
       color: #C2185B;
       text-shadow: 0 0 2px #BBDEFB;
+      margin-bottom: 1.5em;
     }
     .archive-link {
       display: inline-block;
       margin-top: 1.5em;
       margin-bottom: 1em;
-      background: linear-gradient(90deg, #BBDEFB 0%, #1976D2 100%);
-      color: #FFD1DC;
+      background: linear-gradient(90deg, #E3F2FD 0%, #BBDEFB 100%);
+      color: #C2185B;
       font-family: 'Orbitron', 'Share Tech Mono', monospace;
       font-size: 1.13em;
       font-weight: 700;
@@ -71,64 +74,91 @@
       letter-spacing: 0.07em;
       transition: background 0.26s, color 0.26s, box-shadow 0.26s;
       text-align: center;
+      border: 2px solid #C2185B;
     }
     .archive-link:hover, .archive-link:focus {
-      background: linear-gradient(90deg, #1976D2 0%, #BBDEFB 100%);
-      color: #C2185B;
+      background: linear-gradient(90deg, #BBDEFB 0%, #E3F2FD 100%);
+      color: #1976D2;
       box-shadow: 0 0 18px 4px #1976D2;
       outline: none;
+      border-color: #1976D2;
     }
     button {
       display: block;
-      background: linear-gradient(90deg, #BBDEFB 0%, #1976D2 100%);
-      color: #FFD1DC;
+      background: linear-gradient(90deg, #E3F2FD 0%, #BBDEFB 100%);
+      color: #C2185B;
       font-family: 'Orbitron', 'Share Tech Mono', monospace;
       font-size: 1.16em;
-      border: none;
+      border: 2px solid #C2185B;
       padding: 0.8em 2.2em;
       border-radius: 12px;
       cursor: pointer;
       margin-top: 2em;
       box-shadow: 0 0 6px 2px #1976D2;
       letter-spacing: 0.08em;
-      transition: background 0.25s, color 0.25s, box-shadow 0.25s;
+      transition: background 0.25s, color 0.25s, box-shadow 0.25s, border-color 0.25s;
     }
     button:hover, button:focus {
-      background: linear-gradient(90deg, #1976D2 0%, #BBDEFB 100%);
-      color: #C2185B;
+      background: linear-gradient(90deg, #BBDEFB 0%, #E3F2FD 100%);
+      color: #1976D2;
       box-shadow: 0 0 18px 4px #1976D2;
       outline: none;
+      border-color: #1976D2;
+    }
+    .gratitude {
+      margin-top: 2.5em;
+      margin-bottom: 0.5em;
+      padding: 1.1em 1.3em;
+      background: rgba(200, 24, 91, 0.07);
+      color: #8A1450;
+      font-family: 'Roboto', 'Share Tech Mono', 'Consolas', monospace;
+      font-style: italic;
+      font-weight: 900;
+      font-size: 1.1em;
+      border-left: 6px solid #8A1450;
+      border-radius: 12px;
+      text-align: center;
+      letter-spacing: 0.01em;
+      box-shadow: 0 0 8px #E57373;
     }
     @media (max-width: 600px) {
       .container { padding: 1.2em 0.3em; }
-      h1 { font-size: 1.3em; }
+      h1 { font-size: 1.1em; }
     }
   </style>
 </head>
 <body>
   <canvas class="matrix-lights"></canvas>
   <div class="container">
-    <h1>Welcome to the Digital Dreamgirl Diary</h1>
-    <p>This is an online archive sharing real stories from women, non-binary and femme-identifying people about their experiences with Technology-Facilitated Gender-Based Violence (TFGBV).
-
-      Technology-Facilitated Gender-Based Violence (TFGBV) is defined as any form of gendered abuse carried out, amplified, or enabled through digital technology. When published on the 25th June, 2025, 90% of individuals who completed this survey experiences some form of gender-based harrassment through digital technology.
-      Research shows TFGBV is a predecessor to physical abuse.
->
-      This project raises awareness of how digital spaces, algorithmic bias, and the manosphere shape gendered harm dealing real life consequences. 
-> 
-This website is a digital community to speak out, be heard, and observe how tech-driven violence is evolving alongside social media and AI.
->
-The archive is ongoing and open for contributions via the link below. All submissions are anonymous and screened for hate speech, discrimination and threats before publication.</p>
+    <h1>WELCOME TO THE<br>DIGITAL DREAMGIRL DIARY</h1>
+    <p>
+      This is an online archive sharing real stories from women, non-binary and femme-identifying people about their experiences with Technology-Facilitated Gender-Based Violence (TFGBV).
+    </p>
+    <p>
+      Technology-Facilitated Gender-Based Violence (TFGBV) is defined as any form of gendered abuse carried out, amplified, or enabled through digital technology. When published on the 25th June, 2025, 90% of individuals who completed this survey experienced some form of gender-based harassment through digital technology. Research shows TFGBV is a predecessor to physical abuse.
+    </p>
+    <p>
+      This project raises awareness of how digital spaces, algorithmic bias, and the manosphere shape gendered harm, dealing real life consequences.
+    </p>
+    <p>
+      This website is a digital community to speak out, be heard, and observe how tech-driven violence is evolving alongside social media and AI.
+    </p>
+    <p>
+      The archive is ongoing and open for contributions via the link below. All submissions are anonymous and screened for hate speech, discrimination and threats before publication.
+    </p>
     <a 
       class="archive-link" 
-      href="https://docs.google.com/forms/d/1sR1UsRGNVEKV8pdJo5vvCNxKlaP6fM3fbyBWeTE0-oQ/edit" 
+      href="https://docs.google.com/forms/d/e/1FAIpQLScusZ2yTdl6PwvkbAio_g430KB9d2BaCZvk4SA6IiPvxYqSfA/viewform?usp=header" 
       target="_blank" 
       rel="noopener"
     >Submit to the Archive Here</a>
+    <div class="gratitude">
+      Deepest gratitude to Sherele Moody for her support with this project as well as her dedication and ongoing committment to independent reporting and DV Advocacy
+    </div>
     <button onclick="window.location.href='page2.html'">Next</button>
   </div>
   <script>
-    // Custom "Matrix" background using only the letters T, F, G, B, V
+    // MATRIX BACKGROUND: OBVIOUS & BOLD
     const canvas = document.querySelector('.matrix-lights');
     const ctx = canvas.getContext('2d');
     function resizeMatrix() {
@@ -138,28 +168,31 @@ The archive is ongoing and open for contributions via the link below. All submis
     resizeMatrix();
     window.addEventListener('resize', resizeMatrix);
 
-    const fontSize = 18;
+    // Larger, bolder, and denser matrix effect
+    const fontSize = 32;
     let cols = Math.floor(window.innerWidth / fontSize);
     let drops = Array(cols).fill(1);
     const letters = ['T', 'F', 'G', 'B', 'V'];
 
     function drawMatrix() {
-      ctx.fillStyle = 'rgba(255,209,220,0.08)';
+      ctx.fillStyle = 'rgba(255,209,220,0.18)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.font = fontSize + "px 'Share Tech Mono', monospace";
+      ctx.font = fontSize + "px 'Press Start 2P', 'Share Tech Mono', monospace";
+      ctx.shadowColor = "#BBDEFB";
+      ctx.shadowBlur = 8;
       ctx.fillStyle = "#1976D2";
       for(let i = 0; i < drops.length; i++) {
         const char = letters[Math.floor(Math.random() * letters.length)];
         ctx.fillText(char, i * fontSize, drops[i] * fontSize);
-        if(drops[i] * fontSize > canvas.height && Math.random() > 0.965)
+        if(drops[i] * fontSize > canvas.height && Math.random() > 0.96)
           drops[i] = 0;
         drops[i]++;
       }
+      ctx.shadowBlur = 0;
     }
 
     setInterval(drawMatrix, 47);
 
-    // Update columns and drops on resize
     window.addEventListener('resize', () => {
       cols = Math.floor(window.innerWidth / fontSize);
       drops = Array(cols).fill(1);
