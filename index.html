@@ -27,38 +27,6 @@
       z-index: 0;
       opacity: 0.35;
       setInterval(140);
-    }
-    .glitter-trail {
-      pointer-events: none;
-      position: fixed;
-      left: 0; top: 0;
-      width: 100vw; height: 100vh;
-      z-index: 100;
-      overflow: visible;
-      mix-blend-mode: lighten;
-    }
-    .glitter-dot {
-      position: absolute;
-      width: 10px; height: 10px;
-      pointer-events: none;
-      border-radius: 50%;
-      background:
-        radial-gradient(circle at 65% 35%, #fff7fc 0%, #e7a1ff 45%, transparent 80%),
-        radial-gradient(circle at 30% 70%, #ffd1dc 0%, transparent 60%),
-        radial-gradient(circle, #fff 0%, transparent 80%);
-      opacity: 0.92;
-      filter: blur(1.3px) brightness(1.7) drop-shadow(0 0 9px #fff) drop-shadow(0 0 12px #e7a1ff);
-      animation: glitter-fade 1.2s linear forwards;
-      box-shadow:
-        0 0 10px 3px #fff7fc,
-        0 0 18px 5px #e7a1ff,
-        0 0 8px 2px #ffd1dc;
-    }
-    @keyframes glitter-fade {
-      0% { opacity: 1; transform: scale(1);}
-      80% { opacity: 0.85;}
-      100% { opacity: 0; transform: scale(0.6);
-           }
     .container {
       position: relative;
       z-index: 1;
