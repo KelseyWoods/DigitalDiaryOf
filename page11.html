@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Digital Diary Of - Page 7</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@700&family=Press+Start+2P&family=Roboto:ital,wght@1,900&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      cursor: url('https://em-content.zobj.net/thumbs/60/apple/354/nail-polish_1f485.png') 8 16, auto;
+      background: #FFD1DC;
+      color: #e353dd;
+      font-family: 'Share Tech Mono', 'Monaco', monospace;
+      overflow-x: hidden;
+    }
+    body {
+      text-align: center;
+      min-height: 100vh;
+      position: relative;
+      box-sizing: border-box;
+    }
+    .matrix-lights {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.35;
+    }
+    .glitter-trail {
+      pointer-events: none;
+      position: fixed;
+      left: 0; top: 0;
+      width: 100vw; height: 100vh;
+      z-index: 100;
+      overflow: visible;
+      mix-blend-mode: lighten;
+    }
+    .glitter-dot {
+      position: absolute;
+      width: 10px; height: 10px;
+      pointer-events: none;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 65% 35%, #fff7fc 0%, #e7a1ff 45%, transparent 80%),
+        radial-gradient(circle at 30% 70%, #ffd1dc 0%, transparent 60%),
+        radial-gradient(circle, #fff 0%, transparent 80%);
+      opacity: 0.92;
+      filter: blur(1.3px) brightness(1.7) drop-shadow(0 0 9px #fff) drop-shadow(0 0 12px #e7a1ff);
+      animation: glitter-fade 1.2s linear forwards;
+      box-shadow:
+        0 0 10px 3px #fff7fc,
+        0 0 18px 5px #e7a1ff,
+        0 0 8px 2px #ffd1dc;
+    }
+    @keyframes glitter-fade {
+      0% { opacity: 1; transform: scale(1);}
+      80% { opacity: 0.85;}
+      100% { opacity: 0; transform: scale(0.6);}
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 520px;
+      width: 90vw;
+      background: rgba(227,242,253,0.95);
+      padding: 2.5em 2em;
+      border-radius: 24px;
+      box-shadow: 0 0 36px 8px #BBDEFB, 0 0 0 2px #1976D2 inset;
+      backdrop-filter: blur(3px);
+      border: 2px solid #d85cdc; 
+      transition: box-shadow 0.3s;
+      margin: 4em auto 2em auto;
+      background-image: 
+        radial-gradient(circle, rgba(255,255,255,0.7) 2px, transparent 2.5px),
+        radial-gradient(circle, rgba(255,255,255,0.5) 1.5px, transparent 2.5px),
+        radial-gradient(circle, rgba(255,255,255,0.8) 1.2px, transparent 2.2px);
+      background-size: 60px 60px, 90px 90px, 120px 120px;
+      background-position: 0 0, 30px 30px, 60px 60px;
+      animation: glitter 2s linear infinite;
+      z-index: 2;
+    }
+    @keyframes glitter {
+      0% {
+        background-position: 0 0, 30px 30px, 60px 60px;
+      }
+      100% {
+        background-position: 60px 60px, 90px 90px, 120px 120px;
+      }
+    }
+    h1 {
+      font-family: 'Press Start 2P', 'Orbitron', 'Share Tech Mono', monospace;
+      letter-spacing: 0.06em;
+      font-size: 2em;
+      margin-bottom: 0.6em;
+      color: #C2185B;
+      text-shadow: 0 0 12px #BBDEFB, 0 0 2px #1976D2;
+      text-align: center;
+      line-height: 1.3;
+    }
+    h2 {
+      color: rgba(227,242,253,0.95);
+      text-shadow: 0 0 12px #BBDEFB, 0 0 2px #1976D2;
+      font-size: 1.2em;
+      line-height: 1.2;
+      font-family: 'Press Start 2P', 'Orbitron', 'Share Tech Mono', monospace;
+      text-align: center;   
+      margin-top: 3em;
+      letter-spacing: 0.09em;
+    }
+    p {
+      font-size: 1em;
+      line-height: 1.8;
+      color: #BD64B6;
+      text-shadow: 0 0 2px #BBDEFB;
+      margin-bottom: 1.5em;
+      text-align: center;
+    }
+    .button-row {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      margin-top: 2em;
+    }
+    button {
+      background: linear-gradient(90deg, #1976D2 0%, #1998d3 100%);
+      color: #FFFFFF;
+      font-family: 'Press Start 2P', 'Share Tech Mono', monospace;
+      font-size: 1.16em;
+      border: 2px solid #1998d3;
+      padding: 0.8em 2.2em;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 0 6px 2px #ffaffd;
+      letter-spacing: 0.08em;
+      transition: background 0.25s, color 0.25s, box-shadow 0.25s, border-color 0.25s;
+    }
+    .button:hover, button:focus {
+      background: linear-gradient(90deg, #FFD1DC 100%, #F06292 0%);
+      color: #1976D2;
+      box-shadow: 0 0 18px 4px #FFD1DC;
+      outline: none;
+      border-color: #C2185B;
+    }
+    .special-font {
+      font-family: 'Press Start 2P', Arial, sans-serif;
+      color: #C2185B;
+      letter-spacing: 0.1em;
+      line-height: 1.6;
+    }
+    .indent {
+      text-indent: 2em;
+    }
+    @media (max-width: 600px) {
+      .container { padding: 1.2em 0.3em; }
+      h1 { font-size: 1.1em; }
+      .button-row { flex-direction: column; gap: 1em;}
+    }
+  </style>
+</head>
+<body>
+  <canvas class="matrix-lights"></canvas>
+  <div class="glitter-trail"></div>
+  <div class="container">
+    <h1>TRIGGER WARNING 18+ ONLY!</h1>
+<p>Growing up with social media as a female was different for me than everyone I personally know. I never had Snapchat or TikTok or instagram like everyone I grew up with, I was in my own bubble watching Minecraft videos and random music videos, but I never cared that I didn't have those apps... until I hit high school. I felt so left out that my friends and my classmates all had social media and I was the only one that didn't, so I begged my parents to let me have instagram at the age of 13. I wouldn't call myself an expressive person, I really like keeping my life to myself, especially on social media, so idk what I was meant to do on instagram. At times I had my older sister comment on the things I did on it in a negative light, so that really made me realise what other people think of the shit I put on social media. I still don't have TicTok or Snapchat cause I know it's a waste of my life if I get it, I use to use Discord but I got a lot of spam from a toxic friendship I was in for a year and also got death threats/harassment from a person I knew irl, I also got sexually harassed on there and on messengers from the same guy for a span of a year, and it took me two years to realise what he did was wrong and I still have to see he 5 times a week at school, and I still do not know if he did anything with those personal images he made me send him, it scares me to know that he has the power to ruin my life in only a few seconds. I personally hate being online, I don't get anything out of it, it's caused a phone addiction, paranoia, insecurities, and anxiety, and I haven't even graduated high school yet. But I have experienced one good thing out of being online and that is my boyfriend of 2 years. We didn't meet online but we started talking on instagram 2 years ago and the rest is history. He has made my life 10000x better, he is my light, he is my world, he is my everything, and I love him I just wish that being online as a young female was better</p>    
+    <button onclick="window.location.href='index.html'">Home</button>
+      <button onclick="window.location.href='page12.html'">Next</button>
+    </div>
+  </div>
+  <script>
+    // MATRIX BACKGROUND: OBVIOUS & BOLD
+    const canvas = document.querySelector('.matrix-lights');
+    const ctx = canvas.getContext('2d');
+    function resizeMatrix() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeMatrix();
+    window.addEventListener('resize', resizeMatrix);
+
+    // Matrix effect
+    const fontSize = 32;
+    let cols = Math.floor(window.innerWidth / fontSize);
+    let drops = Array(cols).fill(1);
+    const letters = ['T', 'F', 'G', 'B', 'V'];
+
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(255,209,220,0.18)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.font = fontSize + "px 'Press Start 2P', 'Share Tech Mono', monospace";
+      ctx.shadowColor = "#BBDEFB";
+      ctx.shadowBlur = 8;
+      ctx.fillStyle = "#1976D2";
+      for(let i = 0; i < drops.length; i++) {
+        const char = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+        if(drops[i] * fontSize > canvas.height && Math.random() > 0.96)
+          drops[i] = 0;
+        drops[i]++;
+      }
+      ctx.shadowBlur = 0;
+    }
+
+    setInterval(drawMatrix, 47);
+
+    window.addEventListener('resize', () => {
+      cols = Math.floor(window.innerWidth / fontSize);
+      drops = Array(cols).fill(1);
+    });
+
+    // GLITTER CURSOR TRAIL - smaller dots
+    const glitterTrail = document.querySelector('.glitter-trail');
+    document.addEventListener('mousemove', function(e) {
+      for (let i = 0; i < 3; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'glitter-dot';
+        const offsetX = (Math.random() - 0.5) * 10;
+        const offsetY = (Math.random() - 0.5) * 10;
+        dot.style.left = (e.clientX - 5 + offsetX) + 'px';
+        dot.style.top = (e.clientY - 5 + offsetY) + 'px';
+        dot.style.zIndex = 1000;
+        dot.style.opacity = (0.7 + Math.random() * 0.3).toFixed(2);
+        glitterTrail.appendChild(dot);
+        setTimeout(() => dot.remove(), 1200);
+      }
+    });
+  </script>
+</body>
+</html>
